@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>组件通信 | web前端总结</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="组件通信1.1  父子组件通信-子传父1234567891011121.vuex=&amp;gt;解决vue项目的状态管理问题=&amp;gt;数据管理=&amp;gt;组件数据通信=&amp;gt;组件传值2.父传子  组件通信  在子组件中使用父组件传来的数据（props）1)在子组件props:[&amp;apos;&amp;apos;,&amp;apos;&amp;apos;]  字符串数组2)使用组件时 &amp;lt;child-a :mag=&amp;apos;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件通信">
+<meta property="og:url" content="http://yoursite.com/2019/04/13/组件通信/index.html">
+<meta property="og:site_name" content="web前端总结">
+<meta property="og:description" content="组件通信1.1  父子组件通信-子传父1234567891011121.vuex=&amp;gt;解决vue项目的状态管理问题=&amp;gt;数据管理=&amp;gt;组件数据通信=&amp;gt;组件传值2.父传子  组件通信  在子组件中使用父组件传来的数据（props）1)在子组件props:[&amp;apos;&amp;apos;,&amp;apos;&amp;apos;]  字符串数组2)使用组件时 &amp;lt;child-a :mag=&amp;apos;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-12T16:30:02.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="组件通信">
+<meta name="twitter:description" content="组件通信1.1  父子组件通信-子传父1234567891011121.vuex=&amp;gt;解决vue项目的状态管理问题=&amp;gt;数据管理=&amp;gt;组件数据通信=&amp;gt;组件传值2.父传子  组件通信  在子组件中使用父组件传来的数据（props）1)在子组件props:[&amp;apos;&amp;apos;,&amp;apos;&amp;apos;]  字符串数组2)使用组件时 &amp;lt;child-a :mag=&amp;apos;">
+  
+    <link rel="alternate" href="/songfang0/atom.xml" title="web前端总结" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/songfang0/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/songfang0/" id="logo">web前端总结</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/songfang0/" id="subtitle">前端知识点</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/songfang0/">Home</a>
+        
+          <a class="main-nav-link" href="/songfang0/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/songfang0/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-组件通信" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/songfang0/2019/04/13/组件通信/" class="article-date">
+  <time datetime="2019-04-12T16:26:48.000Z" itemprop="datePublished">2019-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      组件通信
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="1-1-父子组件通信-子传父"><a href="#1-1-父子组件通信-子传父" class="headerlink" title="1.1  父子组件通信-子传父"></a>1.1  父子组件通信-子传父</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.vuex=&gt;解决vue项目的状态管理问题=&gt;数据管理=&gt;组件数据通信=&gt;组件传值</span><br><span class="line">2.父传子  组件通信  </span><br><span class="line">在子组件中使用父组件传来的数据（props）</span><br><span class="line">1)在子组件props:[&apos;&apos;,&apos;&apos;]  字符串数组</span><br><span class="line">2)使用组件时 &lt;child-a :mag=&apos;父组件data中的值&apos;&gt; &lt;/child-a&gt;</span><br><span class="line">3)在子组件的template  &#123;&#123;msg&#125;&#125;</span><br><span class="line">3.子传父</span><br><span class="line">子组件中自定义事件 : this.$emit(&apos;事件名&apos;,数据);</span><br><span class="line">自己组件中定义的自定义事件，可以在父组件中调用组件时，使用该事件</span><br><span class="line">this.$emit(&apos;xxx&apos;);  xxx是事件名</span><br><span class="line">this.$emit(&apos;xxx&apos;,数据); 可以传两个参数   </span><br><span class="line">&lt;child-a @xxx=&apos;add()&apos;&gt;&lt;/child-a&gt;  add()函数是写在父组件中的</span><br></pre></td></tr></table></figure>
+<p><code>父传子组件通信</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">parent.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;button @click=&apos;add()&apos;&gt;点我有惊喜哟&lt;/button&gt;</span><br><span class="line">        &lt;child-a AAA=&apos;aaa&apos; BBB=&apos;bbb&apos;&gt;&lt;/child-a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import childA from &apos;./childA&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        num: 100</span><br><span class="line">    &#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        &apos;child-a&apos;: childA</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        add()&#123;</span><br><span class="line">            // this.$emit(&apos;事件名&apos;,数据);  定义自定义事件</span><br><span class="line">            this.$emit(&apos;xxx&apos;,this.num);</span><br><span class="line">            console.log(&apos;子组件&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">child.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;span&gt;&#123;&#123;AAA&#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;span&gt;&#123;&#123;BBB&#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &apos;childA&apos;,</span><br><span class="line">    props: [&apos;AAA&apos;,&apos;BBB&apos;]</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><code>子传父组件通信</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">parent.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  	子组件中定义的自定义事件可以传数据</span><br><span class="line">    &lt;child @xxx=&apos;fn&apos;&gt;&lt;/child&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">引入子组件</span><br><span class="line">import child from &apos;./child&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">      child</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    fn(num)&#123;</span><br><span class="line">      console.log(num);</span><br><span class="line">      console.log(&apos;父组件&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">child.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;button @click=&apos;add()&apos;&gt;点我有惊喜哟&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import childA from &apos;./childA&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            num: 100</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        add()&#123;</span><br><span class="line">            // this.$emit(&apos;事件名&apos;,数据);  定义自定义事件</span><br><span class="line">            this.$emit(&apos;xxx&apos;,this.num);</span><br><span class="line">            console.log(&apos;子组件&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-兄弟组件通信"><a href="#1-2-兄弟组件通信" class="headerlink" title="1.2  兄弟组件通信"></a>1.2  兄弟组件通信</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">中央事件总线: 多个事件共享一个vm</span><br><span class="line">vue绑定事件:</span><br><span class="line">1)标签中绑定事件</span><br><span class="line">&lt;button @xxx=&apos;fn&apos;&gt;&lt;/button&gt;</span><br><span class="line">2)在methods:&#123;</span><br><span class="line">    this.$on(&apos;事件名&apos;,fn);  绑定事件 第一个：事件名  第二个:函数</span><br><span class="line">    	this.$on(&apos;xxx&apos;,()=&gt;&#123;&#125;);</span><br><span class="line">    this.$emit(&apos;事件名&apos;,数据);  触发事件</span><br><span class="line">&#125;</span><br><span class="line">3)绑定和触发自定义事件必须是一个vm实例对象</span><br><span class="line">4)数据A传给数据B  组件A触发事件   组件B绑定事件</span><br></pre></td></tr></table></figure>
+<p><code>vm.vue</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;./vue&apos;;</span><br><span class="line">const vm = new Vue(&#123;&#125;);</span><br><span class="line">export default vm;</span><br></pre></td></tr></table></figure>
+<p><code>childA.vue</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;button @click=&apos;add()&apos;&gt;点我有惊喜哟&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import vm from &apos;./vm.js&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            num: 100</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        add()&#123;</span><br><span class="line">        	触发  传数据</span><br><span class="line">            vm.$emit(&apos;com&apos;,this.num);</span><br><span class="line">            console.log(&apos;sadfffafs&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><code>childB.vue</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import vm from &apos;./vm.js&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">    created()&#123;</span><br><span class="line">    	绑定事件</span><br><span class="line">        vm.$on(&apos;com&apos;,(num) =&gt; &#123;</span><br><span class="line">            console.log(num);</span><br><span class="line">            console.log(&apos;数据传过来了&apos;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><code>app.vue</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;child @xxx=&apos;fn&apos;&gt;&lt;/child&gt;</span><br><span class="line">    &lt;childA&gt;&lt;/childA&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import child from &apos;./child&apos;</span><br><span class="line">import childA from &apos;./childA&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;app&apos;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      msg: &apos;Welcome to Your Vue.js App&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">      child,</span><br><span class="line">      childA</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    fn(num)&#123;</span><br><span class="line">      console.log(num);</span><br><span class="line">      console.log(&apos;父组件&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/13/组件通信/" data-id="cjuealt6f0005rkuu95ho40fc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/songfang0/2019/04/13/vuex状态管理流程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vuex状态管理流程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/songfang0/2019/04/13/面试总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">面试总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/songfang0/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/songfang0/2019/04/13/双飞翼布局/">双飞翼布局</a>
+          </li>
+        
+          <li>
+            <a href="/songfang0/2019/04/13/圣杯布局/">圣杯布局</a>
+          </li>
+        
+          <li>
+            <a href="/songfang0/2019/04/13/vuex状态管理流程/">vuex状态管理流程</a>
+          </li>
+        
+          <li>
+            <a href="/songfang0/2019/04/13/组件通信/">组件通信</a>
+          </li>
+        
+          <li>
+            <a href="/songfang0/2019/04/13/面试总结/">面试总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Fang Ren<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/songfang0/" class="mobile-nav-link">Home</a>
+  
+    <a href="/songfang0/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/songfang0/fancybox/jquery.fancybox.css">
+  <script src="/songfang0/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/songfang0/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

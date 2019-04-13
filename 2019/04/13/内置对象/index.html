@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/songfang0/./style/main.d9e3dd.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>内置对象</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+<canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/songfang0/">web前端总结</a>
+  <a class="face-img" href="/songfang0/">
+    <img src="https://tse1-mm.cn.bing.net/th?id=OIP.Wo0E2kACycBZa4AF_UoUjwAAAA&amp;w=97&amp;h=100&amp;c=8&amp;rs=1&amp;qlt=90&amp;pid=3.1&amp;rm=2">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    内置对象
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-04-13T10:04:34.000Z" itemprop="datePublished">2019-04-13</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-04-13T10:10:38.112Z" itemprop="dateUpdated">2019-04-13</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h3 id="Math的常用方法"><a href="#Math的常用方法" class="headerlink" title="Math的常用方法"></a>Math的常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//绝对值</span><br><span class="line">Math.abs(num)</span><br><span class="line"></span><br><span class="line">//向上取整</span><br><span class="line">Math.ceil(num)</span><br><span class="line"></span><br><span class="line">//向下取整</span><br><span class="line">Math.floor(num)</span><br><span class="line"></span><br><span class="line">//返回多个数字的最大值</span><br><span class="line">Math.max(num)</span><br><span class="line"></span><br><span class="line">//返回多个数字的最小值</span><br><span class="line">Math.min(num)</span><br><span class="line"></span><br><span class="line">//返回一个0-1的随机数</span><br><span class="line">Math.random()</span><br><span class="line"></span><br><span class="line">//四舍五入</span><br><span class="line">Math.round(num)</span><br><span class="line"></span><br><span class="line">//返回一个数的整数部分</span><br><span class="line">Math.trunc(num)</span><br></pre></td></tr></table></figure>
+<h3 id="Date的常用方法"><a href="#Date的常用方法" class="headerlink" title="Date的常用方法"></a>Date的常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//创建当前时间</span><br><span class="line"> var dt = new Date()</span><br><span class="line"></span><br><span class="line">//获取年</span><br><span class="line"> var year = dt.getFullYear()</span><br><span class="line"></span><br><span class="line">//获取月</span><br><span class="line"> var month = dt.getMonth()+1</span><br><span class="line"></span><br><span class="line">//获取日</span><br><span class="line"> var day = dt.getDate()</span><br><span class="line"></span><br><span class="line">//获取时</span><br><span class="line"> var h = dt.getHours()</span><br><span class="line"></span><br><span class="line">//获取分</span><br><span class="line"> var m = dt.getMinutes()</span><br><span class="line"></span><br><span class="line">//获取秒</span><br><span class="line"> var s = dt.getSeconds()</span><br></pre></td></tr></table></figure>
+<h3 id="Array的常用方法"><a href="#Array的常用方法" class="headerlink" title="Array的常用方法"></a>Array的常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">//返回数组的长度</span><br><span class="line">arr.length</span><br><span class="line"></span><br><span class="line">//返回一个截取的数组</span><br><span class="line">arr.slice(2,4)</span><br><span class="line"></span><br><span class="line">//对数组进行排序</span><br><span class="line">arr.sort()</span><br><span class="line"></span><br><span class="line">// 数组反转</span><br><span class="line">arr.reverse()</span><br><span class="line"></span><br><span class="line">//判断数组类型</span><br><span class="line">Array.isArray(arr)</span><br><span class="line"></span><br><span class="line">//等效于arr instanceof Array</span><br><span class="line"></span><br><span class="line">//判断数组中是否包含这个值</span><br><span class="line">arr.includes(5)</span><br><span class="line"></span><br><span class="line">//如果存在,则返回第一个元素的下标,否则返回-1</span><br><span class="line">arr.indexOf(5)</span><br><span class="line"></span><br><span class="line">//如果存在,则返回最后一个元素的下标,否则返回-1</span><br><span class="line">lastIndexOf(5)</span><br><span class="line"></span><br><span class="line">//数组遍历</span><br><span class="line">//循环遍历</span><br><span class="line">arr.forEach( x =&gt; console.log(x) )</span><br><span class="line"></span><br><span class="line">//对数组进行遍历测试,通过返回true,否则false</span><br><span class="line">arr.every( x =&gt; x&gt;0 )</span><br><span class="line"></span><br><span class="line">//对数组进行遍历测试,通过返回false,否则true</span><br><span class="line">arr.some( x =&gt; x&gt;0 )</span><br><span class="line"></span><br><span class="line">//过滤数组,通过则返回当前元素</span><br><span class="line">arr.filter( x =&gt; x&gt;5 )</span><br><span class="line"></span><br><span class="line">//找到数组中满足条件,的第一个元素的值</span><br><span class="line">arr.find( x =&gt; x&gt;5 )</span><br><span class="line"></span><br><span class="line">//满足条件,则返回第一个元素的下标,否则返回0</span><br><span class="line">arr.findIndex( x =&gt; x&gt;5 )</span><br><span class="line"></span><br><span class="line">//对每一个元素调用函数并返回新数组</span><br><span class="line">arr.map( x =&gt; x+1 )</span><br><span class="line"></span><br><span class="line">//对所有元素求和</span><br><span class="line">arr.reduce( (x,y) =&gt; x+y )</span><br><span class="line">//也可以拼接字符串</span><br><span class="line">arr.reduce( (x,y) =&gt; x+&quot;,&quot;+y )</span><br><span class="line"></span><br><span class="line">数组操作</span><br><span class="line">//删除数组中最后一个元素,并返回该元素</span><br><span class="line">arr.pop()</span><br><span class="line"></span><br><span class="line">//删除数组中第一个元素,并返回该元素</span><br><span class="line">arr.shift()</span><br><span class="line"></span><br><span class="line">//将指定元素添加到数组的开头</span><br><span class="line">arr.unshift()</span><br><span class="line"></span><br><span class="line">//将元素追加到数组的最后</span><br><span class="line">arr.push()</span><br><span class="line"></span><br><span class="line">// 从索引为2的位置删除一项</span><br><span class="line">arr.splice(2, 1)</span><br><span class="line"></span><br><span class="line">// 在索引为2的位置插入10</span><br><span class="line">arr.splice(2, 0, 10)</span><br><span class="line"></span><br><span class="line">// 从索引为2的位置删除一项再插入10</span><br><span class="line">arr.splice(2, 1, 10)</span><br><span class="line"></span><br><span class="line">//把若干参数合并为数组</span><br><span class="line">Array.of(1,2,3)</span><br><span class="line"></span><br><span class="line">//合并两个数组并返回</span><br><span class="line">arr1.concat(arr2)</span><br><span class="line"></span><br><span class="line">//把字符串拆分成伪数组</span><br><span class="line">Array.from(&quot;string&quot;)</span><br><span class="line"></span><br><span class="line">//让数组以指定字符拼接</span><br><span class="line">arr.join(&quot;-&quot;)</span><br><span class="line"></span><br><span class="line">//把数组转换成字符串</span><br><span class="line">arr.toString()</span><br><span class="line"></span><br><span class="line">//可以转换时间,数字,字符串</span><br><span class="line">arr.toLocaleString()</span><br></pre></td></tr></table></figure>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">// 获取字符串的长度</span><br><span class="line">&apos;hello&apos;.length</span><br><span class="line"></span><br><span class="line">// 获取指定索引的字符</span><br><span class="line">&apos;hello&apos;.charAt(3)</span><br><span class="line"></span><br><span class="line">// 获取指定字符首次出现的索引</span><br><span class="line">&apos;hello&apos;.indexOf(&apos;l&apos;)</span><br><span class="line"></span><br><span class="line">// 获取指定字符最后出现的索引</span><br><span class="line">&apos;hello&apos;.lastIndexOf(&apos;l&apos;)</span><br><span class="line"></span><br><span class="line">// 查找指定字符出现的位置</span><br><span class="line">&apos;hello&apos;.search(&apos;l&apos;)</span><br><span class="line"></span><br><span class="line">// 对指定字符串进行替换</span><br><span class="line">&apos;hello&apos;.replace(&apos;l&apos;, &apos;o&apos;)</span><br><span class="line"></span><br><span class="line">// 把字符串分割成数组</span><br><span class="line">&apos;hello word&apos;.split(&apos; &apos;)</span><br><span class="line"></span><br><span class="line">// 大写转换小写</span><br><span class="line">&apos;HELLO&apos;.toLowerCase()</span><br><span class="line"></span><br><span class="line">// 小写转换大写</span><br><span class="line">&apos;hello&apos;.toUpperCase()</span><br><span class="line"></span><br><span class="line">// 大写转换小写(根据地区)</span><br><span class="line">&apos;HELLO&apos;.toLocaleLowerCase()</span><br><span class="line"></span><br><span class="line">// 小写转换大写(根据地区)</span><br><span class="line">&apos;hello&apos;.toLocaleUpperCase()</span><br><span class="line"></span><br><span class="line">// 把指定索引的字母转换成编码</span><br><span class="line">&apos;hello&apos;.codePointAt(0)</span><br><span class="line"></span><br><span class="line">// 把编码转换成字母</span><br><span class="line">String.fromCodePoint(65)</span><br><span class="line"></span><br><span class="line">// 截取指定索引字符串</span><br><span class="line">&apos;hello&apos;.slice(0, -3)</span><br><span class="line"></span><br><span class="line">// 截取指定长度的字符串</span><br><span class="line">&apos;hello&apos;.substr(1, 3)</span><br><span class="line"></span><br><span class="line">// 截取指定索引字符串</span><br><span class="line">&apos;hello&apos;.substring(1, 3)</span><br><span class="line"></span><br><span class="line">// 拼接字符串</span><br><span class="line">&apos;hello&apos;.concat(&apos;wo&apos;, &apos;rd&apos;)</span><br><span class="line"></span><br><span class="line">// 以指定长度在后面进行重复填充</span><br><span class="line">&apos;hello&apos;.padEnd(10, &apos;-&apos;)</span><br><span class="line"></span><br><span class="line">// 以指定长度在前面进行重复填充</span><br><span class="line">&apos;hello&apos;.padStart(10, &apos;-&apos;)</span><br><span class="line"></span><br><span class="line">// 将字符串重复整数次</span><br><span class="line">&apos;hello&apos;.repeat(2)</span><br><span class="line"></span><br><span class="line"> // 判断是否包含指定字符</span><br><span class="line">&apos;hello&apos;.includes(&apos;ll&apos;)</span><br><span class="line"></span><br><span class="line">// 判断是否已指定字符开头</span><br><span class="line">&apos;hello&apos;.startsWith(&apos;he&apos;)</span><br><span class="line"></span><br><span class="line">// 判断是否以指定字符结尾</span><br><span class="line">&apos;hello&apos;.endsWith(&apos;lo&apos;)</span><br><span class="line"></span><br><span class="line">// 去除两边空格</span><br><span class="line">&apos;hello&apos;.trim()</span><br><span class="line"></span><br><span class="line">// 去除左边空格</span><br><span class="line">&apos;hello&apos;.trimLeft()</span><br><span class="line"></span><br><span class="line">// 去除右边空格</span><br><span class="line">&apos;hello&apos;.trimRight()</span><br></pre></td></tr></table></figure>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'xxxx.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2018 Ren Fang的博客 京ICP备xxxxxx号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/songfang0/./js/main.d9e3dd.js"></script>
+
+</body>
+</html>

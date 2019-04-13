@@ -1,206 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="某某的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
   
-
-  
-  <title>H5C3 | web前端总结</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="H5C3 API12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485861.存储数据1.1  sessionStorage">
-<meta property="og:type" content="article">
-<meta property="og:title" content="H5C3">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/H5C3/index.html">
-<meta property="og:site_name" content="web前端总结">
-<meta property="og:description" content="H5C3 API12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485861.存储数据1.1  sessionStorage">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-12T16:52:03.091Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H5C3">
-<meta name="twitter:description" content="H5C3 API12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485861.存储数据1.1  sessionStorage">
-  
-    <link rel="alternate" href="/songfang0/atom.xml" title="web前端总结" type="application/atom+xml">
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
   
   
-    <link rel="icon" href="/favicon.png">
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
   
-  <link rel="stylesheet" href="/songfang0/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/songfang0/./style/main.d9e3dd.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>H5C3</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
 </head>
-</html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/songfang0/" id="logo">web前端总结</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/songfang0/" id="subtitle">前端知识点</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/songfang0/">Home</a>
-        
-          <a class="main-nav-link" href="/songfang0/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/songfang0/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-H5C3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/songfang0/2019/04/13/H5C3/" class="article-date">
-  <time datetime="2019-04-12T16:50:55.000Z" itemprop="datePublished">2019-04-13</time>
-</a>
+<canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/songfang0/">web前端总结</a>
+  <a class="face-img" href="/songfang0/">
+    <img src="https://tva3.sinaimg.cn/crop.0.0.200.200.180/005Kc3C1jw8f2uep0hhkvj305k05k3yk.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      H5C3
-    </h1>
+  <h1 class="title">
+    H5C3
+  </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-04-12T16:50:55.000Z" itemprop="datePublished">2019-04-13</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-04-12T16:52:03.091Z" itemprop="dateUpdated">2019-04-13</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
         <h3 id="H5C3-API"><a href="#H5C3-API" class="headerlink" title="H5C3 API"></a>H5C3 API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">1.存储数据</span><br><span class="line">1.1  sessionStorage</span><br><span class="line">    特点:</span><br><span class="line">    	1.存储数据到本地，存储的容量5MB左右</span><br><span class="line">    	2.这个数据本质是存储在当前页面的内存中</span><br><span class="line">    	3.关闭页面数据会自动清除</span><br><span class="line">    	window.sessionStorage.setItem(key,value);</span><br><span class="line">    	setItem(key,value);存储数据，以键值对的方式存储</span><br><span class="line">    	getItem(key);获取数据，通过指定名称的key获取对应的value值</span><br><span class="line">    	removeItem(key);删除数据,通过指定名称key删除对应的值</span><br><span class="line">    	clear();清空所有存储的内容</span><br><span class="line">    	如果没有存储就获取sessionStorage,那么获取的是null.</span><br><span class="line">    	如果在删除数据的时候，key值错误,不会报错，但是也不会删除数据</span><br><span class="line">1.2  localStorage</span><br><span class="line">    特点:</span><br><span class="line">     	1.存储的内容大概20MB</span><br><span class="line">     	2.不同浏览器不能共享数据,但是在同一个浏览器的不同窗口中可以共享数据</span><br><span class="line">     	3.永久生效，它的数据是存储在硬盘上，并不会随着页面或者浏览器的关闭而清除</span><br><span class="line">1.3  网络状态</span><br><span class="line">    // 通过window.navigator.onLine可以返回当前的网络状态</span><br><span class="line">    alert(window.navigator.onLine);</span><br><span class="line">    window.addEventListener(&apos;online&apos;, function () &#123;</span><br><span class="line">        //alert(&apos;online&apos;);</span><br><span class="line">        $(&apos;.tips&apos;).text(&apos;网络已连接&apos;).fadeIn(500).delay(1000).fadeOut();</span><br><span class="line">    &#125;);</span><br><span class="line">    window.addEventListener(&apos;offline&apos;, function () &#123;</span><br><span class="line">        //alert(&apos;offline&apos;);</span><br><span class="line">        $(&apos;.tips&apos;).text(&apos;网络已断开&apos;).fadeIn(500).delay(1000).fadeOut();</span><br><span class="line">    &#125;);</span><br><span class="line">1.4  文件读取</span><br><span class="line">    &lt;input type=&quot;file&quot; class=&quot;file&quot; multiple&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        /*获取到了文件表单元素*/</span><br><span class="line">        var file = document.querySelector(&apos;.file&apos;);</span><br><span class="line">        /*选择文件后触发*/</span><br><span class="line">        file.onchange = function () &#123;</span><br><span class="line">            /*初始化了一个文件读取对象*/</span><br><span class="line">            var reader = new FileReader();</span><br><span class="line">            /*读取文件数据  this.files[0] 文件表单元素选择的第一个文件 */</span><br><span class="line">            reader.readAsDataURL(this.files[0]);</span><br><span class="line">            /*读取的过程就相当于 加载过程 */</span><br><span class="line">            /*读取完毕  预览 */</span><br><span class="line">            reader.onload = function () &#123;</span><br><span class="line">            /*读取完毕 base64位数据  表示图片*/</span><br><span class="line">            console.log(this.result);</span><br><span class="line">            	document.querySelector(&apos;#img&apos;).src = this.result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">1.5  拖拽</span><br><span class="line">    // 整个拖拽都会执行</span><br><span class="line">    box.addEventListener(&apos;drag&apos;, function (e) &#123;</span><br><span class="line">    	console.log(&apos;drag&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    // 拖拽的点离开当前盒子</span><br><span class="line">    box.addEventListener(&apos;dragleave&apos;, function () &#123;</span><br><span class="line">    	console.log(&apos;dragleave&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    // 拖拽开始</span><br><span class="line">    box.addEventListener(&apos;dragstart&apos;, function () &#123;</span><br><span class="line">        this.style.backgroundColor = &apos;red&apos;;</span><br><span class="line">        console.log(&apos;dragstart&apos;)</span><br><span class="line">    &#125;);</span><br><span class="line">    // 拖拽结束</span><br><span class="line">    box.addEventListener(&apos;dragend&apos;, function (ev) &#123;</span><br><span class="line">        this.style.backgroundColor = &apos;&apos;;</span><br><span class="line">        console.log(&apos;dragend&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    //在目标元素上移动</span><br><span class="line">    container.addEventListener(&apos;dragover&apos;, function (e) &#123;</span><br><span class="line">        this.style.backgroundColor = &apos;yellow&apos;;</span><br><span class="line">        console.log(&apos;目标dragover&apos;);</span><br><span class="line">        e.preventDefault();</span><br><span class="line">    &#125;);</span><br><span class="line">    //在目标元素离开</span><br><span class="line">    container.addEventListener(&apos;dragleave&apos;, function (e) &#123;</span><br><span class="line">        this.style.backgroundColor = &apos;&apos;;</span><br><span class="line">        console.log(&apos;目标dragleave&apos;);</span><br><span class="line">        e.preventDefault();</span><br><span class="line">    &#125;);</span><br><span class="line">    //在目标元素松开</span><br><span class="line">    container.addEventListener(&apos;drop&apos;, function (e) &#123;</span><br><span class="line">        this.style.backgroundColor = &apos;black&apos;;</span><br><span class="line">        console.log(&apos;目标drop&apos;);</span><br><span class="line">        e.preventDefault();</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/13/H5C3/" data-id="cjueb7k6r00027wuuo9637d8s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/songfang0/2019/04/13/双飞翼布局/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">双飞翼布局</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/songfang0/archives/2019/04/">April 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/H5C3/">H5C3</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/双飞翼布局/">双飞翼布局</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/圣杯布局/">圣杯布局</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/vuex状态管理流程/">vuex状态管理流程</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/组件通信/">组件通信</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Fang Ren<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'xxxx.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
     </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2018 某某的博客 京ICP备xxxxxx号</p>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/songfang0/" class="mobile-nav-link">Home</a>
-  
-    <a href="/songfang0/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
 
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/songfang0/./js/main.d9e3dd.js"></script>
 
-  <link rel="stylesheet" href="/songfang0/fancybox/jquery.fancybox.css">
-  <script src="/songfang0/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/songfang0/js/script.js"></script>
-
-
-
-  </div>
 </body>
 </html>

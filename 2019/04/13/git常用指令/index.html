@@ -1,215 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="某某的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
   
-
-  
-  <title>git常用指令 | web前端总结</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git常用指令12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273## Git常用命令 &amp;gt; 工作目录下面的所有文件都不外乎这两种状态：已跟踪或未跟踪。 ~~~ $ git">
-<meta property="og:type" content="article">
-<meta property="og:title" content="git常用指令">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/git常用指令/index.html">
-<meta property="og:site_name" content="web前端总结">
-<meta property="og:description" content="git常用指令12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273## Git常用命令 &amp;gt; 工作目录下面的所有文件都不外乎这两种状态：已跟踪或未跟踪。 ~~~ $ git">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-12T16:18:24.766Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git常用指令">
-<meta name="twitter:description" content="git常用指令12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273## Git常用命令 &amp;gt; 工作目录下面的所有文件都不外乎这两种状态：已跟踪或未跟踪。 ~~~ $ git">
-  
-    <link rel="alternate" href="/songfang0/atom.xml" title="web前端总结" type="application/atom+xml">
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
   
   
-    <link rel="icon" href="/favicon.png">
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
   
-  <link rel="stylesheet" href="/songfang0/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/songfang0/./style/main.d9e3dd.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>git常用指令</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
 </head>
-</html>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/songfang0/" id="logo">web前端总结</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/songfang0/" id="subtitle">前端知识点</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/songfang0/">Home</a>
-        
-          <a class="main-nav-link" href="/songfang0/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/songfang0/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-git常用指令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/songfang0/2019/04/13/git常用指令/" class="article-date">
-  <time datetime="2019-04-12T16:17:01.000Z" itemprop="datePublished">2019-04-13</time>
-</a>
+<canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/songfang0/">web前端总结</a>
+  <a class="face-img" href="/songfang0/">
+    <img src="https://tva3.sinaimg.cn/crop.0.0.200.200.180/005Kc3C1jw8f2uep0hhkvj305k05k3yk.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      git常用指令
-    </h1>
+  <h1 class="title">
+    git常用指令
+  </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-04-12T16:17:01.000Z" itemprop="datePublished">2019-04-13</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-04-12T16:18:24.766Z" itemprop="dateUpdated">2019-04-13</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
         <h2 id="git常用指令"><a href="#git常用指令" class="headerlink" title="git常用指令"></a>git常用指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">## Git常用命令 </span><br><span class="line">&gt; 工作目录下面的所有文件都不外乎这两种状态：已跟踪或未跟踪。 </span><br><span class="line">~~~ </span><br><span class="line">$ git config --list // 查看配置信息 </span><br><span class="line">$ git config [--global] user.name &quot;&quot; // 配置用户名 </span><br><span class="line">$ git config [--global] user.email &quot;&quot; // 配置邮箱 </span><br><span class="line">$ git init [project-name] // 在工作目录中初始化新仓库 </span><br><span class="line">$ git init --bare [project-name] // 在工作目录中初始化新仓库 只记录版本没有工作区 </span><br><span class="line">$ git clone [url] [project-name] // 从现有仓库克隆 </span><br><span class="line">$ git fetch [remote-name] [branch-name] // 从远程仓库抓取数据 </span><br><span class="line">// 注意：fetch 命令只是将远端的数据拉到本地仓库，并不自动合并到当前工作分支 </span><br><span class="line">$ git fetch --all // 获取所有 </span><br><span class="line">$ git log FETCH_HEAD // 查看获取的最新远程HEAD </span><br><span class="line">$ git pull [remote-name] [branch-name] // 从远端仓库中抓取数据后，合并到工作目录中的当前分支 git fetch 和 git merge </span><br><span class="line">// 注意：由于 git pull 的魔法经常令人困惑所以通常单独显式地使用 fetch 与 merge 命令会更好一些。 </span><br><span class="line">$ git push [remote-name] [branch-name] // 推送数据到远程仓库 </span><br><span class="line">$ git push origin --delete serverfix // 删除远程分支 </span><br><span class="line">// 远程分支以 (remote)/(branch) 形式命名 </span><br><span class="line">$ git remote [-v] // 查看当前的远程库 </span><br><span class="line">$ git remote add [shortname] [url] // 添加远程仓库 </span><br><span class="line">$ git remote show [remote-name] // 查看远程仓库信息 </span><br><span class="line">$ git ls-remote [remote-name] // 显式获得远程引用的完整列表 </span><br><span class="line">$ git checkout -b serverfix origin/serverfix // 创建分支并跟踪远程 </span><br><span class="line">$ git checkout --track origin/serverfix // 创建和远程一样的分支并跟踪 </span><br><span class="line">$ git branch -u origin/serverfix // 设置已有的本地分支跟踪一个刚刚拉取下来的远程分支，或者想要修改正在跟踪的上游分支 </span><br><span class="line">$ git branch -vv // 所有跟踪分支 </span><br><span class="line">$ git add [. *.*] // 跟踪新文件，已跟踪的文件放到暂存区，把有冲突的文件标记为已解决状态等 </span><br><span class="line">$ git status // 检查当前文件状态 </span><br><span class="line">$ git commit [-m &apos;&apos;] // 提交更新 </span><br><span class="line">$ git commit -a -m &apos;&apos; // 跳过使用暂存区域 提交更新 </span><br><span class="line">$ git diff // 比较工作目录中当前文件和暂存区域快照之间的差异 </span><br><span class="line">$ git diff --cached // 已经暂存起来的文件和上次提交时的快照之间的差异 </span><br><span class="line">$ git diff --staged // 已经暂存起来的文件和上次提交时的快照之间的差异 </span><br><span class="line">$ git rm // 移除已跟踪文件(暂存区域移除) 并从工作目录中删除指定的文件 </span><br><span class="line">$ git rm --cached // 移除已跟踪文件(暂存区域移除) 保留在当前工作目录 </span><br><span class="line">$ git mv // 移动文件 (相当于 mv file1 file2 , git rm file1 ,git add file2) </span><br><span class="line">$ git log // 查看提交历史 </span><br><span class="line">$ git log [-p] [-2] // -p显示每次提交的内容差异 -2仅显示最近的两次更新 </span><br><span class="line">$ git log --oneline --decorate --graph --all // 查看分叉历史 </span><br><span class="line">$ git commit --amend // 修改最后一次提交 </span><br><span class="line">$ git reset HEAD &lt;file&gt;... // 取消已经暂存的文件 </span><br><span class="line">$ git checkout -- &lt;file&gt;... // 取消对文件的修改 </span><br><span class="line">$ git branch [branch] // 创建分支 </span><br><span class="line">$ git checkout [branch] // 切换分支 </span><br><span class="line">$ git checkout -b [branch] // 创建并切换分支 </span><br><span class="line">$ git branch -d [branch] // 删除分支 </span><br><span class="line">$ git branch // 当前所有分支列表 </span><br><span class="line">$ git branch -v // 当前所有分支列表和最后一次提交 </span><br><span class="line">$ git branch --merged // 已经合并到当前分支的分支列表 </span><br><span class="line">$ git branch --no-merged // 尚未合并到当前分支的分支列表 </span><br><span class="line">// 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。 </span><br><span class="line">// merage 分为 快进合并 和 整合合并 </span><br><span class="line">$ git merge [branch] // 合并分支 </span><br><span class="line">$ git merge origin/master // 合并 </span><br><span class="line">$ git rebase origin/master // 变基 </span><br><span class="line">$ git rebase --abort // 来取消目前的rebase进程 </span><br><span class="line">$ git rebase --cqontinue // 继续目前的rebase进程 </span><br><span class="line">$ git rebase --onto master server client // m&gt;s&gt;c 从一个特性分支里再分出一个特性分支的提交历史 </span><br><span class="line">git reset --hard 版本号 //回滚版本 </span><br><span class="line">$ git diff // 不加参数即默认比较工作区与暂存区 </span><br><span class="line">$ git diff --cached [&lt;path&gt;...] // 较暂存区与最新本地版本库（本地库中最近一次commit的内容） </span><br><span class="line">$ git diff HEAD [&lt;path&gt;...] // 比较工作区与最新本地版本库 HEAD是master分支可以换成master </span><br><span class="line">$ git diff commit-id [&lt;path&gt;...] // 比较工作区与指定commit-id的差异 </span><br><span class="line">$ git diff --cached [&lt;commit-id&gt;] [&lt;path&gt;...] // 比较暂存区与指定commit-id的差异 </span><br><span class="line">$ git diff [&lt;commit-id&gt;] [&lt;commit-id&gt;] // 比较两个commit-id之间的差异 </span><br><span class="line">$ </span><br><span class="line">$ git help &lt;verb&gt; //帮助命令 </span><br><span class="line">$ git &lt;verb&gt; --help //帮助命令 </span><br><span class="line">$ man git-&lt;verb&gt; //帮助命令 </span><br><span class="line">~~~ </span><br><span class="line">![1c5be00301acbe5334ce5eceb8f5088f.png](evernotecid://8329B9A2-63B9-46FA-BDF0-A91CD1917B8C/appyinxiangcom/11049585/ENResource/p13) </span><br><span class="line">![1ce791a6bab444cc113010199b656a04.png](evernotecid://8329B9A2-63B9-46FA-BDF0-A91CD1917B8C/appyinxiangcom/11049585/ENResource/p14) </span><br><span class="line">&gt; 只在 master 分支上保留完全稳定的代码——有可能仅仅是已经发布或即将发布的代码。 他们还有一些名为 develop 或者 next 的平行分支，被用来做后续开发或者测试稳定性——这些分支不必保持绝对稳定，但是一旦达到稳定状态，它们就可以被合并入 master 分支了。</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/13/git常用指令/" data-id="cjueb7k6900007wuuf338coxy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/songfang0/2019/04/13/面试总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          面试总结
-        
       </div>
-    </a>
-  
-  
-    <a href="/songfang0/2019/04/13/个人博客搭建/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">个人博客搭建</div>
-    </a>
-  
-</nav>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'xxxx.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/songfang0/archives/2019/04/">April 2019</a></li></ul>
-    </div>
-  </div>
+  gitalk.render('comments');
+</script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/H5C3/">H5C3</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/双飞翼布局/">双飞翼布局</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/圣杯布局/">圣杯布局</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/vuex状态管理流程/">vuex状态管理流程</a>
-          </li>
-        
-          <li>
-            <a href="/songfang0/2019/04/13/组件通信/">组件通信</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+        </div>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Fang Ren<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2018 某某的博客 京ICP备xxxxxx号</p>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/songfang0/" class="mobile-nav-link">Home</a>
-  
-    <a href="/songfang0/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
 
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/songfang0/./js/main.d9e3dd.js"></script>
 
-  <link rel="stylesheet" href="/songfang0/fancybox/jquery.fancybox.css">
-  <script src="/songfang0/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/songfang0/js/script.js"></script>
-
-
-
-  </div>
 </body>
 </html>

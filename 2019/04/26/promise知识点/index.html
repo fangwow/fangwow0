@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/songfang0/./style/main.d9e3dd.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>promise知识点</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+<canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/songfang0/">web前端总结</a>
+  <a class="face-img" href="/songfang0/">
+    <img src="https://tse1-mm.cn.bing.net/th?id=OIP.Wo0E2kACycBZa4AF_UoUjwAAAA&amp;w=97&amp;h=100&amp;c=8&amp;rs=1&amp;qlt=90&amp;pid=3.1&amp;rm=2">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    promise知识点
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-04-25T16:04:02.000Z" itemprop="datePublished">2019-04-26</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-04-25T16:04:44.441Z" itemprop="dateUpdated">2019-04-26</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h2 id="Promise语法"><a href="#Promise语法" class="headerlink" title="Promise语法"></a>Promise语法</h2><h3 id="1-Promise使用"><a href="#1-Promise使用" class="headerlink" title="1.  Promise使用"></a>1.  Promise使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Promise是一个构造函数,既然是构造函数,那么我们就可以new Promise()得到一个Promise的实例</span><br><span class="line">在Promise上,有两个函数,分别叫做resolve(成功之后的回调)和reject(失败之后的回调)</span><br><span class="line">在Promise构造函数的Promise函数的Prototype属性上,有一个.then()方法,也就是说,只要Promise构造函数创建的实例,都可以访问到.then()方法</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">// new Promise是一个构造函数 对象本身不是异步的,里面的任务是异步的</span><br><span class="line">console.log(1);</span><br><span class="line">const p1 = new Promise(function(resolve)&#123;</span><br><span class="line">    console.log(2);</span><br><span class="line">    // 此处是异步的</span><br><span class="line">    fs.readFile(&apos;./aaa.txt&apos;,&apos;utf8&apos;,function(err,data)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            throw err;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            console.log(3);</span><br><span class="line">            console.log(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;); </span><br><span class="line">&#125;);</span><br><span class="line">console.log(4);</span><br><span class="line">打印结果是: 1 2 4 3 文件中的数据aaa</span><br></pre></td></tr></table></figure>
+<h3 id="2-then方法"><a href="#2-then方法" class="headerlink" title="2.  then方法"></a>2.  then方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">// new Promise是一个构造函数 对象本身不是异步的,里面的任务是异步的</span><br><span class="line">const p1 = new Promise(function(resolve,reject)&#123;</span><br><span class="line">    // 此处是异步的</span><br><span class="line">    fs.readFile(&apos;./aaa.txt&apos;,&apos;utf8&apos;,function(err,data)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            // 异步任务失败执行</span><br><span class="line">            // throw err;</span><br><span class="line">            reject(err);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            // 异步任务成功执行</span><br><span class="line">            resolve(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">p1.then(function(data)&#123;</span><br><span class="line">    // function就是容器中的resolve函数</span><br><span class="line">    // 异步任务成功执行的函数就是这个函数</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    // 异步任务失败执行此方法</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.  总结"></a>3.  总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var p1 = new Promise(function(resolve,reject)&#123;</span><br><span class="line">    fs.readFile(&apos;./aaa.txt&apos;,&apos;utf8&apos;,function(err,data)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            reject(err);  异步任务失败执行 reject</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            resolve(data);  异步任务成功执行 resolve</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">p1.then(function(data)&#123;</span><br><span class="line">    console.log(data);    异步任务成功 resolve()函数</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    console.log(err);     失败reject函数</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="4-返回Promise对象"><a href="#4-返回Promise对象" class="headerlink" title="4.  返回Promise对象"></a>4.  返回Promise对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">// new Promise是一个构造函数 对象本身不是异步的,里面的任务是异步的</span><br><span class="line">const p1 = new Promise(function(resolve,reject)&#123;</span><br><span class="line">    // 此处是异步的</span><br><span class="line">    fs.readFile(&apos;./aaa.txt&apos;,&apos;utf8&apos;,function(err,data)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            // 异步任务失败执行</span><br><span class="line">            // throw err;</span><br><span class="line">            reject(err);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            // 异步任务成功执行</span><br><span class="line">            resolve(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">const p2 = new Promise(function(resolve,reject)&#123;</span><br><span class="line">    // 此处是异步的</span><br><span class="line">    fs.readFile(&apos;./bbb.txt&apos;,&apos;utf8&apos;,function(err,data)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            // 异步任务失败执行</span><br><span class="line">            // throw err;</span><br><span class="line">            reject(err);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            // 异步任务成功执行</span><br><span class="line">            resolve(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">p1.then(function(data)&#123;</span><br><span class="line">    // function就是容器中的resolve函数</span><br><span class="line">    // 异步任务成功执行的函数就是这个函数</span><br><span class="line">    // console.log(data);</span><br><span class="line">    // 当前函数return到的结果可以在后面then中function接收到</span><br><span class="line">    // return 123;</span><br><span class="line">    // 当return的是一个Promise对象时,后面的then中的方法的第一个参数会作为p2对象的resolve函数调用</span><br><span class="line">    return p2;</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    // 异步任务失败执行此方法</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br><span class="line">.then(function(data)&#123;</span><br><span class="line">    console.log(data);     //bbb</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">如果前面的函数执行失败了,不想影响后面函数的执行</span><br><span class="line">p1.then(function(data)&#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">    return p2;</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    // 异步任务失败执行此方法</span><br><span class="line">    console.log(err);</span><br><span class="line">    return p2;       返回该对象之后，会继续执行下面的代码</span><br><span class="line">&#125;)</span><br><span class="line">.then(function(data)&#123;</span><br><span class="line">    console.log(data);     //bbb</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">如果前面的函数执行失败了,立即结束所有后续函数的执行</span><br><span class="line">p1.then(function(data)&#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">    return p2;</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    // 异步任务失败执行此方法</span><br><span class="line">    如果不想前面文件失败结束后面代码的执行,那么需要给文件添加失败的回调，返回一个新的promise对象</span><br><span class="line">    console.log(err);</span><br><span class="line">    return p2;       返回该对象之后，会继续执行下面的代码</span><br><span class="line">&#125;)</span><br><span class="line">.then(function(data)&#123;</span><br><span class="line">    console.log(data);     //bbb</span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br><span class="line">不管前面哪个then执行失败,都会立即结束后续代码执行,进入到这个catch函数</span><br><span class="line">catch作用: 如果前面有任何的Promise执行失败,则立即终止所有Promise的执行,并马上进入catch去处理Promise中抛出的异常</span><br><span class="line">.catch(function(err)&#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-封装文件的回调"><a href="#5-封装文件的回调" class="headerlink" title="5.  封装文件的回调"></a>5.  封装文件的回调</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">需求: 封装一个方法,要读取文件的路径</span><br><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">fs.readFile(&apos;a.txt&apos;,&apos;utf-8&apos;,(err,data) =&gt; &#123;</span><br><span class="line">    if(err) throw err</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>file.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">function getFile(fPath)&#123;</span><br><span class="line">    fs.readFile(fPath,&apos;utf-8&apos;,(err,data) =&gt; &#123;</span><br><span class="line">        if(err) throw err</span><br><span class="line">        console.log(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">getFile(&apos;a.txt&apos;);</span><br></pre></td></tr></table></figure>
+<p><code>file1.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">function getFile(fPath)&#123;</span><br><span class="line">    fs.readFile(fPath,&apos;utf-8&apos;,(err,data) =&gt; &#123;</span><br><span class="line">        if(err) throw err</span><br><span class="line">        return data;</span><br><span class="line">    &#125;);</span><br><span class="line">    没有return,返回的是undefined</span><br><span class="line">&#125;</span><br><span class="line">console.log(getFile(&apos;a.txt&apos;));  undefined</span><br></pre></td></tr></table></figure>
+<p><code>file2.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">function getFile(fPath)&#123;</span><br><span class="line">    fs.readFile(fPath,&apos;utf-8&apos;,(err,data) =&gt; &#123;</span><br><span class="line">        if(err) throw err</span><br><span class="line">        callback(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">getFile(&apos;a.txt&apos;,(data) =&gt; &#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>file3.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">function getFile(fPath)&#123;</span><br><span class="line">    fs.readFile(fPath,&apos;utf-8&apos;,(err,data) =&gt; &#123;</span><br><span class="line">        if(err) return callback(err)</span><br><span class="line">        callback(null,data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">getFile(&apos;a.txt&apos;,(err,data) =&gt; &#123;</span><br><span class="line">    if(err) return console.log(err)</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>file4.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">function getFile(fPath,callbackErr,callbackSuc)&#123;</span><br><span class="line">    fs.readFile(fPath,&apos;utf-8&apos;,(err,data) =&gt; &#123;</span><br><span class="line">        if(err) return callbackErr(err)</span><br><span class="line">        callbackSuc(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">getFile(&apos;a.txt&apos;,(err) =&gt; &#123;</span><br><span class="line">    console.log(&apos;失败了&apos;);</span><br><span class="line">&#125;,(data) =&gt; &#123;</span><br><span class="line">    console.log(&apos;成功了&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="6-回调地狱"><a href="#6-回调地狱" class="headerlink" title="6.  回调地狱"></a>6.  回调地狱</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">先读取文件1,再读取文件2,再读取文件3</span><br><span class="line">getFile(&apos;file1.txt&apos;,funciton(data)&#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">    getFile(&apos;file2.txt&apos;,funciton(data)&#123;</span><br><span class="line">        console.log(data);</span><br><span class="line">        getFile(&apos;file3.txt&apos;,funciton(data)&#123;</span><br><span class="line">            console.log(data);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">使用ES6中的Promise来解决回调地狱的问题</span><br></pre></td></tr></table></figure>
+<h3 id="7-jQuery中的Promise"><a href="#7-jQuery中的Promise" class="headerlink" title="7.  jQuery中的Promise"></a>7.  jQuery中的Promise</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(function()&#123;</span><br><span class="line">    $(&apos;#btn&apos;).on(&apos;click&apos;,function()&#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: &apos;&apos;,</span><br><span class="line">            type: &apos;get&apos;,</span><br><span class="line">            dataType: &apos;json&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">        .then(function(data)&#123;</span><br><span class="line">            console.log(data);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'xxxx.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2018 Ren Fang的博客 京ICP备xxxxxx号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/songfang0/./js/main.d9e3dd.js"></script>
+
+</body>
+</html>

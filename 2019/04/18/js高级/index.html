@@ -59,7 +59,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2019-04-19T07:27:58.822Z" itemprop="dateUpdated">2019-04-19</time>
+    更新 <time datetime="2019-05-26T15:02:30.918Z" itemprop="dateUpdated">2019-05-26</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -71,65 +71,16 @@
     <div class="article">
       <div class="content">
         
-        <h1 id="JavaScript-高级"><a href="#JavaScript-高级" class="headerlink" title="JavaScript 高级"></a>JavaScript 高级</h1><h3 id="JavaScript-中的数据类型"><a href="#JavaScript-中的数据类型" class="headerlink" title="JavaScript 中的数据类型"></a>JavaScript 中的数据类型</h3><p>JavaScript 有 5 种简单数据类型：<code>Undefined、Null、Boolean、Number、String</code> 和 1 种复杂数据类型 <code>Object</code> 。</p>
-<h4 id="基本类型（值类型）"><a href="#基本类型（值类型）" class="headerlink" title="基本类型（值类型）"></a>基本类型（值类型）</h4><ul>
-<li>Undefined</li>
-<li>Null</li>
-<li>Boolean</li>
-<li>Number</li>
-<li>String</li>
-</ul>
-<h4 id="复杂类型（引用类型）"><a href="#复杂类型（引用类型）" class="headerlink" title="复杂类型（引用类型）"></a>复杂类型（引用类型）</h4><ul>
-<li>Object</li>
-<li>Array</li>
-<li>Date</li>
-<li>RegExp</li>
-<li>Function</li>
-<li>基本包装类型<ul>
-<li>Boolean</li>
-<li>Number</li>
-<li>String</li>
-</ul>
-</li>
-<li>单体内置对象<ul>
-<li>Global</li>
-<li>Math</li>
-</ul>
-</li>
-</ul>
+        <h1 id="JavaScript-高级"><a href="#JavaScript-高级" class="headerlink" title="JavaScript 高级"></a>JavaScript 高级</h1><h3 id="JavaScript-中的数据类型"><a href="#JavaScript-中的数据类型" class="headerlink" title="JavaScript 中的数据类型"></a>JavaScript 中的数据类型</h3><p>JavaScript 有 5 种简单数据类型：<code>Undefined、Null、Boolean、Number、String</code> 和 1 种复杂数据类型 <code>Object、Array、Date、RegExp、Function|</code> 。</p>
+<p>基本包装类型: Boolean、String、Number</p>
 <h4 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h4><ul>
 <li><code>typeof</code></li>
 <li><code>instanceof</code></li>
 <li><code>Object.prototype.toString.call()</code></li>
 </ul>
-<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><h4 id="简单方式"><a href="#简单方式" class="headerlink" title="简单方式"></a>简单方式</h4><p>我们可以直接通过 <code>new Object()</code> 创建：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">person.name = <span class="string">'Jack'</span></span><br><span class="line">person.age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">person.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>每次创建通过 <code>new Object()</code> 比较麻烦，所以可以通过它的简写形式对象字面量来创建：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jack'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于上面的写法固然没有问题，但是假如我们要生成两个 <code>person</code> 实例对象呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;</span><br><span class="line">  name: <span class="string">'Jack'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person2 = &#123;</span><br><span class="line">  name: <span class="string">'Mike'</span>,</span><br><span class="line">  age: <span class="number">16</span>,</span><br><span class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过上面的代码我们不难看出，这样写的代码太过冗余，重复性太高。</p>
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>内容引导：</p>
-<ul>
-<li>构造函数语法</li>
-<li>分析构造函数</li>
-<li>构造函数和实例对象的关系<ul>
-<li>实例的 constructor 属性</li>
-<li>instanceof 操作符</li>
-</ul>
-</li>
-<li>普通函数调用和构造函数调用的区别</li>
-<li>构造函数的返回值</li>
-<li>构造函数的静态成员和实例成员<ul>
-<li>函数也是对象</li>
-<li>实例成员</li>
-<li>静态成员</li>
-</ul>
-</li>
-<li>构造函数的问题</li>
-</ul>
-<h4 id="更优雅的工厂函数：构造函数"><a href="#更优雅的工厂函数：构造函数" class="headerlink" title="更优雅的工厂函数：构造函数"></a>更优雅的工厂函数：构造函数</h4><p>一种更优雅的工厂函数就是下面这样，构造函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>, <span class="number">18</span>)</span><br><span class="line">p1.sayName() <span class="comment">// =&gt; Jack</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">'Mike'</span>, <span class="number">23</span>)</span><br><span class="line">p2.sayName() <span class="comment">// =&gt; Mike</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><h4 id="1-直接通过-new-Object-创建："><a href="#1-直接通过-new-Object-创建：" class="headerlink" title="1.  直接通过 new Object() 创建："></a>1.  直接通过 <code>new Object()</code> 创建：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">person.name = <span class="string">'Jack'</span></span><br><span class="line">person.age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">person.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-对象字面量来创建："><a href="#2-对象字面量来创建：" class="headerlink" title="2.  对象字面量来创建："></a>2.  对象字面量来创建：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jack'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-构造函数"><a href="#3-构造函数" class="headerlink" title="3.  构造函数"></a>3.  构造函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>, <span class="number">18</span>)</span><br><span class="line">p1.sayName() <span class="comment">// =&gt; Jack</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">'Mike'</span>, <span class="number">23</span>)</span><br><span class="line">p2.sayName() <span class="comment">// =&gt; Mike</span></span><br></pre></td></tr></table></figure>
 <p>使用 <code>new</code> 操作符调用构造函数会经历以下 4 个步骤：</p>
 <ol>
 <li>创建一个新对象</li>
@@ -138,7 +89,7 @@
 <li>返回新对象</li>
 </ol>
 <p>下面是具体的伪代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 当使用 new 操作符调用 Person() 的时候，实际上这里会先创建一个对象</span></span><br><span class="line">  <span class="comment">// var instance = &#123;&#125;</span></span><br><span class="line">  <span class="comment">// 然后让内部的 this 指向 instance 对象</span></span><br><span class="line">  <span class="comment">// this = instance</span></span><br><span class="line">  <span class="comment">// 接下来所有针对 this 的操作实际上操作的就是 instance</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 在函数的结尾处会将 this 返回，也就是 instance</span></span><br><span class="line">  <span class="comment">// return this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="构造函数和实例对象的关系"><a href="#构造函数和实例对象的关系" class="headerlink" title="构造函数和实例对象的关系"></a>构造函数和实例对象的关系</h4><p>使用构造函数的好处不仅仅在于代码的简洁性，更重要的是我们可以识别对象的具体类型了。<br>在每一个实例对象中的__proto__中同时有一个 <code>constructor</code> 属性，该属性指向创建该实例的构造函数：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(p1.constructor === Person) <span class="comment">// =&gt; true</span></span><br><span class="line"><span class="built_in">console</span>.log(p2.constructor === Person) <span class="comment">// =&gt; true</span></span><br><span class="line"><span class="built_in">console</span>.log(p1.constructor === p2.constructor) <span class="comment">// =&gt; true</span></span><br></pre></td></tr></table></figure>
 <p>对象的 <code>constructor</code> 属性最初是用来标识对象类型的，<br>但是，如果要检测对象的类型，还是使用 <code>instanceof</code> 操作符更可靠一些：</p>
@@ -147,7 +98,7 @@
 <ul>
 <li>构造函数是根据具体的事物抽象出来的抽象模板</li>
 <li>实例对象是根据抽象的构造函数模板得到的具体实例对象</li>
-<li>每一个实例对象都具有一个 <code>constructor</code> 属性，指向创建该实例的构造函数<ul>
+<li>每一个实例对象都具有 一个 <code>constructor</code> 属性，指向创建该实例的构造函数<ul>
 <li>注意： <code>constructor</code> 是实例的属性的说法不严谨，具体后面的原型会讲到</li>
 </ul>
 </li>

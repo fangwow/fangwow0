@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/songfang0/./style/main.d9e3dd.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>项目总结知识点</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+<canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/songfang0/">web前端总结</a>
+  <a class="face-img" href="/songfang0/">
+    <img src="https://tse1-mm.cn.bing.net/th?id=OIP.Wo0E2kACycBZa4AF_UoUjwAAAA&amp;w=97&amp;h=100&amp;c=8&amp;rs=1&amp;qlt=90&amp;pid=3.1&amp;rm=2">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    项目总结知识点
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-10-25T02:11:27.000Z" itemprop="datePublished">2019-10-25</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-10-28T02:46:31.136Z" itemprop="dateUpdated">2019-10-28</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h2 id="小强"><a href="#小强" class="headerlink" title="小强"></a>小强</h2><p>手机端样式总结</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">/* 禁用iPhone中Safari的字号自动调整 */</span><br><span class="line">html &#123;</span><br><span class="line">    -webkit-text-size-adjust: 100%;</span><br><span class="line">    -ms-text-size-adjust: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 去除iPhone中默认的input样式  清除苹果浏览器的圆角表单*/</span><br><span class="line">input[type=&quot;submit&quot;],</span><br><span class="line">input[type=&quot;reset&quot;],</span><br><span class="line">input[type=&quot;button&quot;],</span><br><span class="line">input&#123;</span><br><span class="line">  	-webkit-appearance:none; </span><br><span class="line">  	resize: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 强制不换行,引出省略号 */</span><br><span class="line">.ellipsis &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">取消链接高亮</span><br><span class="line">body&#123; </span><br><span class="line">	-webkit-tap-highlight-color:rgba(0, 0, 0, 0); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 图片自适应 */</span><br><span class="line">img &#123;</span><br><span class="line">    max-width: 100%;</span><br><span class="line">    height: auto;</span><br><span class="line">    width:auto\9; /* ie8 */</span><br><span class="line">    -ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">清除浮动</span><br><span class="line"></span><br><span class="line">https://www.cnblogs.com/garfieldzhong/p/4759690.html </span><br><span class="line">chrome浏览器中input输入 如果有记录背景色会变成黄色：</span><br><span class="line">	方法1: 去掉自动记录</span><br><span class="line">		&lt;input type=&quot;text&quot;  autocomplete=&quot;off&quot;&gt;</span><br><span class="line">	方法2: </span><br><span class="line">    input:-webkit-autofill 导致chrome的输入框背景颜色变成黄色,不仅input, textarea、select也一样有，而且只有是&quot;-webkit&quot;</span><br><span class="line">    input:-webkit-autofill &#123; </span><br><span class="line">      -webkit-box-shadow:inset 0 0 0 100px #FFFFFF ;</span><br><span class="line">      -webkit-text-fill-color: #818391;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="移动端框架"><a href="#移动端框架" class="headerlink" title="移动端框架"></a>移动端框架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vux:VUE移动端UI组件库</span><br><span class="line">mand-mobile: 面向金融场景的移动端UI组件库</span><br><span class="line">mui:</span><br><span class="line">mint:</span><br><span class="line">vue全家桶:</span><br><span class="line">Mand组件库:</span><br><span class="line">Echarts.js:</span><br><span class="line">Scss:</span><br><span class="line">做移动端开发一直使用[手淘的分辨率适配方案](https://www.w3cplus.com/css/vw-for-layout.html)</span><br><span class="line">大漠的[《如何在Vue项目中使用vw实现移动端适配》](https://www.w3cplus.com/mobile/vw-layout-in-vue.html)，对移动端分辨率用webpack在工程中配置</span><br><span class="line">类似于百度地图: 计时  配速    消耗能量   插件 timer   http://timer.geexek.com/</span><br></pre></td></tr></table></figure>
+<h3 id="异步请求-axios"><a href="#异步请求-axios" class="headerlink" title="异步请求 axios"></a>异步请求 axios</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="地图-Vue-baidu-Map"><a href="#地图-Vue-baidu-Map" class="headerlink" title="地图(Vue baidu Map)"></a>地图(Vue baidu Map)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">安装：npm install vue-baidu-map --save</span><br><span class="line">官方文档: https://dafrok.github.io/vue-baidu-map/#/zh</span><br><span class="line"></span><br><span class="line">1.百度地图容器</span><br><span class="line">BaiduMap 百度地图容器，用于挂载百度地图核心类和一个百度地图实例。是所有地图组件的根组件。 地图容器的实质是一个空的 DOM 节点，它可以用于挂载 BmView 组件或其它 DOM 节点或组件。如果你需要二次开发或手动控制其子组件，可以使用在 ready 事件中使用返回的 BMap 类和 map 实例进行手动控制。</span><br></pre></td></tr></table></figure>
+<h3 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var x=document.getElementById(&quot;demo&quot;);</span><br><span class="line">function getLocation()&#123;</span><br><span class="line">    if (navigator.geolocation)&#123;</span><br><span class="line">        navigator.geolocation.getCurrentPosition(showPosition);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        x.innerHTML=&quot;该浏览器不支持获取地理位置。&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function showPosition(position)&#123;</span><br><span class="line">    x.innerHTML=&quot;纬度: &quot; + position.coords.latitude + &quot;&lt;br&gt;经度: &quot; + position.coords.longitude;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'xxxx.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2018 Ren Fang的博客 京ICP备xxxxxx号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/songfang0/./js/main.d9e3dd.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/songfang0/./style/main.d9e3dd.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>文件上传</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+<canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/songfang0/">web前端总结</a>
+  <a class="face-img" href="/songfang0/">
+    <img src="https://tse1-mm.cn.bing.net/th?id=OIP.Wo0E2kACycBZa4AF_UoUjwAAAA&amp;w=97&amp;h=100&amp;c=8&amp;rs=1&amp;qlt=90&amp;pid=3.1&amp;rm=2">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    文件上传
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-10-24T07:01:23.000Z" itemprop="datePublished">2019-10-24</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-10-24T07:56:54.687Z" itemprop="dateUpdated">2019-10-24</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">表单元素input在type类型为file的时候,input元素会自带属性 files</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input id=&quot;inputFile&quot; type=&quot;file&quot; value=&quot;文件上传&quot; multiple=&quot;&quot; accept=&quot;.png&quot; onchange=&quot;change()&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function change()&#123;</span><br><span class="line">            var inputFile = document.getElementById(&quot;inputFile&quot;);</span><br><span class="line">            console.log(inputFile.files);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">当每上传一个文件，input的files属性控制台会打印如下内容:</span><br><span class="line">	FileList &#123;0: File, 1: File, length: 2&#125;</span><br><span class="line">        0: File</span><br><span class="line">            lastModified: 1571795493729</span><br><span class="line">            lastModifiedDate: Wed Oct 23 2019 09:51:33 GMT+0800 (中国标准时间) &#123;&#125;</span><br><span class="line">            name: &quot;测试文件9.xls&quot;</span><br><span class="line">            size: 6656</span><br><span class="line">            type: &quot;application/vnd.ms-excel&quot;</span><br><span class="line">            webkitRelativePath: &quot;&quot;</span><br><span class="line">            __proto__: File</span><br><span class="line">        1: File</span><br><span class="line">            lastModified: 1571819184841</span><br><span class="line">            lastModifiedDate: Wed Oct 23 2019 16:26:24 GMT+0800 (中国标准时间) &#123;&#125;</span><br><span class="line">            name: &quot;会议列表.xlsx&quot;</span><br><span class="line">            size: 19292</span><br><span class="line">            type: &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;</span><br><span class="line">            webkitRelativePath: &quot;&quot;</span><br><span class="line">            __proto__: File</span><br><span class="line">        length: 2</span><br><span class="line">        __proto__: FileList</span><br><span class="line"> 可以显示上传文件的相关信息</span><br><span class="line"> 	lastModified: 数值类型,表示最近一次修改时间的毫秒数</span><br><span class="line"> 	lastModifiedDate: 对象，表示最后一次表示最近一次修改时间的Date对象（高程中说是字符串，根据上图可看出应该为对象，为了层级清晰未对其展开，大家可自行查看，其可调用Date对象的有关方法，例如getDay方法）</span><br><span class="line"> 	name: &quot;测试文件9.xls&quot;    文件名字</span><br><span class="line">    size: 6656			    文件大小</span><br><span class="line">    type: &quot;application/vnd.ms-excel&quot;		文件类型</span><br><span class="line">    webkitRelativePath: &quot;&quot;   此处为空；当在input上加上webkitdirectory属性时，用户可选择文件夹，此时weblitRelativePath表示文件夹中文件的相对路径</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\Administrator\AppData\Local\Temp\1571900749001.png" alt="1571900749001"></p>
+<h3 id="input的file属性不能获取文件的具体信息，所以使用FileReader来实现文件上传"><a href="#input的file属性不能获取文件的具体信息，所以使用FileReader来实现文件上传" class="headerlink" title="input的file属性不能获取文件的具体信息，所以使用FileReader来实现文件上传"></a>input的file属性不能获取文件的具体信息，所以使用FileReader来实现文件上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">我们可以通过html5提供的FileReader读取到文件中的数据,首先创建一个FileReader实例,</span><br><span class="line">var reader = new FileReader();</span><br><span class="line">构造函数FileReader()下,有以下方法:</span><br><span class="line">	readAsArrayBuffer(file)	    按字节读取文件内容，结果用ArrayBuffer对象表示</span><br><span class="line">    readAsBinaryString(file)	按字节读取文件内容，结果为文件的二进制串</span><br><span class="line">    readAsDataURL(file)	        读取文件内容，结果用data:url的字符串形式表示  会将文件内容进行base64编码后输出</span><br><span class="line">    readAsText(file,encoding)	按字符读取文件内容，结果用字符串形式表示</span><br><span class="line">    abort()					   终止文件读取操作</span><br><span class="line">事件:</span><br><span class="line">	onabort	    当读取操作被中止时调用</span><br><span class="line">    onerror	    当读取操作发生错误时调用</span><br><span class="line">    	触发error事件时，相关信息保存在FileReader对象的error属性中，这个属性将保存一个对象，此对象只有一个属性code，即错误码。1表示未找到文件，2表示安全性错误，3表示读取中断，4表示文件不可读，5表示编码错误。</span><br><span class="line">    onload	    当读取操作成功完成时调用</span><br><span class="line">    onloadend	当读取操作完成时调用，无论成功或失败</span><br><span class="line">    onloadstart	当读取操作开始时调用</span><br><span class="line">    onprogress	在读取数据过程中周期性调用  每过50ms左右，就会触发一次progress事件，对于较大的文件可以利用progress实现进度条</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input id=&quot;inputFile&quot; type=&quot;file&quot; value=&quot;文件上传&quot; multiple=&quot;&quot; onchange=&quot;change()&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function change()&#123;</span><br><span class="line">            var inputFile = document.getElementById(&quot;inputFile&quot;);</span><br><span class="line">            console.log(inputFile.files);</span><br><span class="line">            var file = new FileReader();</span><br><span class="line">            file.readAsDataURL(inputFile.files[0]);</span><br><span class="line">            file.onload = function()&#123;</span><br><span class="line">                //读取完成后，数据保存在对象的result属性中</span><br><span class="line">                console.log(this.result);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="实现文件上传"><a href="#实现文件上传" class="headerlink" title="实现文件上传"></a>实现文件上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input id=&quot;inputFile&quot; type=&quot;file&quot; value=&quot;文件上传&quot; multiple=&quot;&quot; onchange=&quot;change()&quot;&gt;</span><br><span class="line">    &lt;img id=&quot;imgSrc&quot; src=&quot;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function change()&#123;</span><br><span class="line">            var inputFile = document.getElementById(&quot;inputFile&quot;);</span><br><span class="line">            var imgSrc = document.getElementById(&quot;imgSrc&quot;);</span><br><span class="line">            console.log(inputFile.files);</span><br><span class="line">            var file = new FileReader();</span><br><span class="line">            file.readAsDataURL(inputFile.files[0]);</span><br><span class="line">            file.onload = function()&#123;</span><br><span class="line">                //读取完成后，数据保存在对象的result属性中</span><br><span class="line">                console.log(this.result);</span><br><span class="line">                imgSrc.src = this.result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'xxxx.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2018 Ren Fang的博客 京ICP备xxxxxx号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/songfang0/./js/main.d9e3dd.js"></script>
+
+</body>
+</html>
